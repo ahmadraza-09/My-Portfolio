@@ -1,0 +1,63 @@
+<style>
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  
+    #box1,
+    #box2,
+    #box3,
+    #box4 {
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-align: center;
+    }
+  </style>
+  
+  <div class="container">
+    <div id="box1">Box 1</div>
+    <div id="box2">Box 2</div>
+    <div id="box3">Box 3</div>
+    <div id="box4">Box 4</div>
+  </div>
+  
+  <script>
+    const box1 = document.getElementById("box1");
+    const box2 = document.getElementById("box2");
+    const box3 = document.getElementById("box3");
+    const box4 = document.getElementById("box4");
+  
+    // Function to hide three div elements and show one div
+    function hideAndShowBoxes(showBox, hideBox1, hideBox2, hideBox3) {
+      showBox.style.display = "block";
+      hideBox1.style.display = "none";
+      hideBox2.style.display = "none";
+      hideBox3.style.display = "none";
+    }
+  
+    box1.addEventListener("mouseover", () => {
+      hideAndShowBoxes(box1, box2, box3, box4);
+    });
+  
+    box2.addEventListener("mouseover", () => {
+      hideAndShowBoxes(box2, box1, box3, box4);
+    });
+  
+    box3.addEventListener("mouseover", () => {
+      hideAndShowBoxes(box3, box1, box2, box4);
+    });
+  
+    box4.addEventListener("mouseover", () => {
+      hideAndShowBoxes(box4, box1, box2, box3);
+    });
+  </script>
+  
